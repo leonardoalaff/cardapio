@@ -139,7 +139,7 @@ addressInput.addEventListener('input', (event) => {
 //finalizar pedido
 checkoutBtn.addEventListener('click', () => {
 
-    const isOpen = checkRestaurantOpen()
+    /*const isOpen = checkRestaurantOpen()
     if(!isOpen) {
         Toastify({
             text: "Ops! O restaurante está fechado!",
@@ -155,7 +155,7 @@ checkoutBtn.addEventListener('click', () => {
             }}).showToast()
 
             return
-    }
+    }*/
 
     if(cart.length === 0) return
 
