@@ -3,7 +3,7 @@ const cartBtn = document.querySelector('#cart-btn')
 const cartModal = document.querySelector('#cart-modal')
 const cartItemsContainer = document.querySelector('#cart-items')
 const cartTotal = document.querySelector('#cart-total')
-const checkout = document.querySelector('#checkout-btn')
+const checkoutBtn = document.querySelector('#checkout-btn')
 const closeModalBtn = document.querySelector('#close-modal-btn')
 const cartCounter = document.querySelector('#cart-count')
 const addressInput = document.querySelector('#address')
@@ -124,4 +124,64 @@ function removeItemCart(name) {
         cart.splice(index, 1)
         updateCartModal()
     }
+}
+
+
+addressInput.addEventListener('input', (event) => {
+    let inputValue = event.target.value
+
+    if(inputValue !== "") {
+        addressInput.classList.remove('border-red-500')
+        addressWarn.classList.add('hidden')
+    }
+})
+
+//finalizar pedido
+checkoutBtn.addEventListener('click', () => {
+
+    //const isOpen = checkRestaurantOpen()
+    //if(!isOpen) {
+        //alert('RESTAURANTE FECHADO NO MOMENTO!')
+        //return
+    //}
+
+    if(cart.length === 0) return
+
+    if(addressInput.value === "") {
+        addressWarn.classList.remove('hidden')
+        addressInput.classList.add('border-red-500')
+        return
+    }
+
+    //enviar pedido para api whatsapp
+    const cartItems = cart.map((item) => {
+        return (
+            `${item.name} Quantidade: (${item.quantity}) Preço: ${item.price} |`
+        )
+    }).join("")
+
+    const message = encodeURIComponent(cartItems)
+    const phone = "5533984523678"
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+})
+
+
+//verificar a hora e manipular o card do horário
+function checkRestaurantOpen() {
+    const data = new Date()
+    const hora = data.getHours()
+    return hora >= 18 && hora < 22
+    //restaurante está aberto
+}
+
+const spanItem = document.querySelector('#date-span')
+const isOpen = checkRestaurantOpen()
+
+if(isOpen) {
+    spanItem.classList.remove('bg-red-500')
+    spanItem.classList.add('bg-green-600')
+} else {
+    spanItem.classList.remove('bg-green-600')
+    spanItem.classList.add('bg-red-500')
 }
