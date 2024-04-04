@@ -870,20 +870,6 @@ body {
   background-color: #f6f7f8;
 }
 
-.add-to-cart-btn:hover {
-  animation: move 0.5s ease-in-out;
-}
-
-@keyframes move {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.5);
-  }
-}
-
 .hover\:rotate-2:hover {
   --tw-rotate: 2deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
