@@ -139,11 +139,23 @@ addressInput.addEventListener('input', (event) => {
 //finalizar pedido
 checkoutBtn.addEventListener('click', () => {
 
-    //const isOpen = checkRestaurantOpen()
-    //if(!isOpen) {
-        //alert('RESTAURANTE FECHADO NO MOMENTO!')
-        //return
-    //}
+    const isOpen = checkRestaurantOpen()
+    if(!isOpen) {
+        Toastify({
+            text: "Ops! O restaurante está fechado!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#ef4444",
+            }}).showToast()
+
+            return
+    }
 
     if(cart.length === 0) return
 
@@ -164,6 +176,9 @@ checkoutBtn.addEventListener('click', () => {
     const phone = "5533984523678"
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+
+    cart = []
+    updateCartModal()
 })
 
 
