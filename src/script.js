@@ -8,6 +8,103 @@ const closeModalBtn = document.querySelector('#close-modal-btn')
 const cartCounter = document.querySelector('#cart-count')
 const addressInput = document.querySelector('#address')
 const addressWarn = document.querySelector('#address-warn')
+const image1 = document.querySelector('#image1')
+const image2 = document.querySelector('#image2')
+const image3 = document.querySelector('#image3')
+const image4 = document.querySelector('#image4')
+const imageb1 = document.querySelector('#imageb1')
+const imageb2 = document.querySelector('#imageb2')
+const addToCartBtn1 = document.querySelector('.add-to-cart-btn1')
+const addToCartBtn2 = document.querySelector('.add-to-cart-btn2')
+const addToCartBtn3 = document.querySelector('.add-to-cart-btn3')
+const addToCartBtn4 = document.querySelector('.add-to-cart-btn4')
+const addToCartBtnb1 = document.querySelector('.add-to-cart-btnb1')
+const addToCartBtnb2 = document.querySelector('.add-to-cart-btnb2')
+const opHamburguer = document.querySelector('#op-hamburguer')
+const opBebidas = document.querySelector('#op-bebidas')
+const opPizzas = document.querySelector('#op-pizzas')
+
+
+
+opHamburguer.addEventListener('click', () => {
+    var elementoDestino = document.getElementById('titulo-hamburguer');
+            var posicaoElemento = elementoDestino.offsetTop; // Posição do topo do elemento em relação à parte superior da página
+            var deslocamentoExtra = 20; // Quantidade extra de deslocamento
+
+            window.scrollTo({
+                top: posicaoElemento + deslocamentoExtra,
+                behavior: 'smooth' // Rola suavemente para a posição
+            });
+})
+
+opBebidas.addEventListener('click', () => {
+    var elementoDestino = document.getElementById('titulo-bebidas');
+            var posicaoElemento = elementoDestino.offsetTop; // Posição do topo do elemento em relação à parte superior da página
+            var deslocamentoExtra = 20; // Quantidade extra de deslocamento
+
+            window.scrollTo({
+                top: posicaoElemento + deslocamentoExtra,
+                behavior: 'smooth' // Rola suavemente para a posição
+            });
+})
+
+
+var rotationAngle = 0;
+
+addToCartBtn1.addEventListener('click', () => {
+    
+    // Adicionando 45 graus à rotação atual
+    rotationAngle += 360;
+    // Aplicando a nova rotação
+    image1.style.transform = 'rotateY(' + rotationAngle + 'deg)';
+
+})
+
+addToCartBtn2.addEventListener('click', () => {
+    
+    // Adicionando 45 graus à rotação atual
+    rotationAngle += 360;
+    // Aplicando a nova rotação
+    image2.style.transform = 'rotateY(' + rotationAngle + 'deg)';
+
+})
+
+addToCartBtn3.addEventListener('click', () => {
+    
+    // Adicionando 45 graus à rotação atual
+    rotationAngle += 360;
+    // Aplicando a nova rotação
+    image3.style.transform = 'rotateY(' + rotationAngle + 'deg)';
+
+})
+
+addToCartBtn4.addEventListener('click', () => {
+    
+    // Adicionando 45 graus à rotação atual
+    rotationAngle += 360;
+    // Aplicando a nova rotação
+    image4.style.transform = 'rotateY(' + rotationAngle + 'deg)';
+
+})
+
+
+addToCartBtnb1.addEventListener('click', () => {
+    
+    // Adicionando 45 graus à rotação atual
+    rotationAngle += 360;
+    // Aplicando a nova rotação
+    imageb1.style.transform = 'rotateY(' + rotationAngle + 'deg)';
+
+})
+
+addToCartBtnb2.addEventListener('click', () => {
+    
+    // Adicionando 45 graus à rotação atual
+    rotationAngle += 360;
+    // Aplicando a nova rotação
+    imageb2.style.transform = 'rotateY(' + rotationAngle + 'deg)';
+
+})
 
 let cart = []
 
