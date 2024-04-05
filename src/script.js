@@ -23,6 +23,7 @@ const addToCartBtnb2 = document.querySelector('.add-to-cart-btnb2')
 const opHamburguer = document.querySelector('#op-hamburguer')
 const opBebidas = document.querySelector('#op-bebidas')
 const opPizzas = document.querySelector('#op-pizzas')
+const qtd = document.querySelector('#qtd')
 
 
 
@@ -48,63 +49,6 @@ opBebidas.addEventListener('click', () => {
             });
 })
 
-
-var rotationAngle = 0;
-
-addToCartBtn1.addEventListener('click', () => {
-    
-    // Adicionando 45 graus à rotação atual
-    rotationAngle += 360;
-    // Aplicando a nova rotação
-    image1.style.transform = 'rotateY(' + rotationAngle + 'deg)';
-
-})
-
-addToCartBtn2.addEventListener('click', () => {
-    
-    // Adicionando 45 graus à rotação atual
-    rotationAngle += 360;
-    // Aplicando a nova rotação
-    image2.style.transform = 'rotateY(' + rotationAngle + 'deg)';
-
-})
-
-addToCartBtn3.addEventListener('click', () => {
-    
-    // Adicionando 45 graus à rotação atual
-    rotationAngle += 360;
-    // Aplicando a nova rotação
-    image3.style.transform = 'rotateY(' + rotationAngle + 'deg)';
-
-})
-
-addToCartBtn4.addEventListener('click', () => {
-    
-    // Adicionando 45 graus à rotação atual
-    rotationAngle += 360;
-    // Aplicando a nova rotação
-    image4.style.transform = 'rotateY(' + rotationAngle + 'deg)';
-
-})
-
-
-addToCartBtnb1.addEventListener('click', () => {
-    
-    // Adicionando 45 graus à rotação atual
-    rotationAngle += 360;
-    // Aplicando a nova rotação
-    imageb1.style.transform = 'rotateY(' + rotationAngle + 'deg)';
-
-})
-
-addToCartBtnb2.addEventListener('click', () => {
-    
-    // Adicionando 45 graus à rotação atual
-    rotationAngle += 360;
-    // Aplicando a nova rotação
-    imageb2.style.transform = 'rotateY(' + rotationAngle + 'deg)';
-
-})
 
 let cart = []
 
